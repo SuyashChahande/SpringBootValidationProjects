@@ -22,7 +22,7 @@ public class UserController {
     private UserService service;
 
     @PostMapping("/signup")
-    public ResponseEntity<User> saveUser(@RequestBody @Valid UserRequest userRequest){
+    public ResponseEntity<User> saveUser(@RequestBody @Valid UserRequest userRequest) {
         return new ResponseEntity<>(service.saveUser(userRequest), HttpStatus.CREATED);
     }
 
@@ -35,4 +35,6 @@ public class UserController {
     public ResponseEntity<User> getUser(@PathVariable int id) throws UserNotFoundException {
         return ResponseEntity.ok(service.getUser(id));
     }
+
+
 }
